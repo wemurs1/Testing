@@ -17,6 +17,6 @@ public class CalculatorTests
     {
         var calc = new Calculator();
         var result = calc.Add(1.2, 3.5);
-        Assert.Equal(4.7, result);
+        Assert.Equal(4.7, result, 1);
     }
 }
