@@ -21,4 +21,13 @@ public class NamesTests
         names.NickName = "";
         Assert.NotNull(names.NickName);
     }
+
+    [Fact]
+    public void MakeFullName_AlwaysReturnValue()
+    {
+        var names = new Names();
+        var result = names.MakeFullName("John", "Brown");
+        // Assert.True(!string.IsNullOrEmpty(result));
+        Assert.False(string.IsNullOrEmpty(result));
+    }
 }
