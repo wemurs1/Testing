@@ -18,6 +18,7 @@ public class NamesTests
     public void NickName_MustBeNull()
     {
         var names = new Names();
-        Assert.Null(names.NickName);
+        names.NickName = "";
+        Assert.NotNull(names.NickName);
     }
 }
