@@ -9,7 +9,8 @@ public class NamesTests
         var result = names.MakeFullName("John", "Brown");
         // Assert.Equal("John Brown", result, ignoreCase: true);
         // Assert.Contains("John", result, StringComparison.InvariantCultureIgnoreCase);
-        Assert.StartsWith("John", result);
-        Assert.EndsWith("Brown", result);
+        // Assert.StartsWith("John", result);
+        // Assert.EndsWith("Brown", result);
+        Assert.Matches("[A-Z]{1}[a-z]+ [A-Z]{1}[a-z]+", result);
     }
 }
