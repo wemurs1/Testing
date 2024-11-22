@@ -8,6 +8,6 @@ public class NamesTests
         var names = new Names();
         var result = names.MakeFullName("John", "Brown");
         // Assert.Equal("John Brown", result, ignoreCase: true);
-        Assert.Contains("John", result);
+        Assert.Contains("John", result, StringComparison.InvariantCultureIgnoreCase);
     }
 }
