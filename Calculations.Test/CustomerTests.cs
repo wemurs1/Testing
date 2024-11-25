@@ -21,6 +21,7 @@ public class CustomerTests
     public void GetOrdersByNameNoNull()
     {
         var customer = new Customer();
-        Assert.Throws<ArgumentException>(() => customer.GetOrdersByName(null));
+        var exceptionDetails = Assert.Throws<ArgumentException>(() => customer.GetOrdersByName(null));
+        Assert.Equal("hello", exceptionDetails.Message);
     }
 }

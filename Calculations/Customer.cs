@@ -8,7 +8,7 @@ public class Customer
     {
         if (string.IsNullOrEmpty(name))
         {
-            throw new ArgumentException();
+            throw new ArgumentException("hello");
         }
         return 100;
     }
