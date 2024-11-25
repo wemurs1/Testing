@@ -16,4 +16,11 @@ public class CustomerTests
         var customer = new Customer();
         Assert.InRange(customer.Age, 25, 40);
     }
+
+    [Fact]
+    public void GetOrdersByNameNoNull()
+    {
+        var customer = new Customer();
+        Assert.Throws<ArgumentException>(() => customer.GetOrdersByName(null));
+    }
 }
