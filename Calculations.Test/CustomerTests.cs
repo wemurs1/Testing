@@ -24,4 +24,11 @@ public class CustomerTests
         var exceptionDetails = Assert.Throws<ArgumentException>(() => customer.GetOrdersByName(null));
         Assert.Equal("hello", exceptionDetails.Message);
     }
+
+    [Fact]
+    public void LoyalCustomerForOrdersGT100()
+    {
+        var customer = CustomerFactory.CreateCustomerInstance(102);
+        Assert.IsType<LoyalCustomer>(customer);
+    }
 }
