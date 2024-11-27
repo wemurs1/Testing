@@ -12,6 +12,11 @@ public class Customer
         }
         return 100;
     }
+
+    public string GetFullName(string firstName, string lastName)
+    {
+        return $"{firstName} {lastName}";
+    }
 }
 
 public class LoyalCustomer : Customer

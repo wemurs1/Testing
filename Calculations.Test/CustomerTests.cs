@@ -1,11 +1,12 @@
 namespace Calculations.Test;
 
-public class CustomerTests
+[Collection("Customer")]
+public class CustomerTests(CustomerFixture customerFixture)
 {
     [Fact]
     public void CheckNameNotEmpty()
     {
-        var customer = new Customer();
+        var customer = customerFixture.Cust;
         Assert.NotNull(customer.Name);
         Assert.False(string.IsNullOrEmpty(customer.Name));
     }
@@ -13,14 +14,14 @@ public class CustomerTests
     [Fact]
     public void CheckLegitForDiscount()
     {
-        var customer = new Customer();
+        var customer = customerFixture.Cust;
         Assert.InRange(customer.Age, 25, 40);
     }
 
     [Fact]
     public void GetOrdersByNameNoNull()
     {
-        var customer = new Customer();
+        var customer = customerFixture.Cust;
         var exceptionDetails = Assert.Throws<ArgumentException>(() => customer.GetOrdersByName(null));
         Assert.Equal("hello", exceptionDetails.Message);
     }
