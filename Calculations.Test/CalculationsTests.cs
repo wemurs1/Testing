@@ -44,4 +44,30 @@ public class CalculationsTests(CalculationsFixture calculationsFixture) : IClass
         var calc = calculationsFixture.Calc;
         Assert.Equal(expectedCollection, calc.FiboNumbers);
     }
+
+    [Fact]
+    public void IsOdd_GivenOddValue_ReturnsTrue()
+    {
+        var calc = calculationsFixture.Calc;
+        var result = calc.IsOdd(1);
+        Assert.True(result);
+    }
+
+    [Fact]
+    public void IsOdd_GivenEvenValue_ReturnsFalse()
+    {
+        var calc = calculationsFixture.Calc;
+        var result = calc.IsOdd(2);
+        Assert.False(result);
+    }
+
+    [Theory]
+    [InlineData(1, true)]
+    [InlineData(2, false)]
+    public void IsOdd_TestOddAndEven(int value, bool expected)
+    {
+        var calc = calculationsFixture.Calc;
+        var result = calc.IsOdd(value);
+        Assert.Equal(expected, result);
+    }
 }
